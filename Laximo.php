@@ -39,16 +39,17 @@ class Laximo
         );
     }
 
-    public function addListCatalogs()
+    public function addListCatalogs() : self
     {
         $this->addQuery('ListCatalogs',[
             'Locale' => $this->locale
         ]);
 
         $this->resultObjectStack[] = CatalogListObject::class;
+        return $this;
     }
 
-    public function addGetCatalogInfo(string $catalog, string $ssd = '')
+    public function addGetCatalogInfo(string $catalog, string $ssd = '') : self
     {
         $this->addQuery('GetCatalogInfo',[
             'Locale' => $this->locale,
@@ -57,9 +58,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = CatalogObject::class;
+
+        return $this;
     }
 
-    public function addFindVehicle(string $identity)
+    public function addFindVehicle(string $identity) : self
     {
         $this->addQuery('FindVehicle',[
             'Locale' => $this->locale,
@@ -67,9 +70,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = VehicleListObject::class;
+
+        return $this;
     }
 
-    public function addGetVehicleInfo(string $vehicleId, string $catalog, string $ssd)
+    public function addGetVehicleInfo(string $vehicleId, string $catalog, string $ssd) : self
     {
         $this->addQuery('GetVehicleInfo',[
             'Locale'    => $this->locale,
@@ -80,9 +85,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = VehicleObject::class;
+
+        return $this;
     }
 
-    public function addFindVehicleByVIN(string $vin, string $catalog = '', string $ssd = '')
+    public function addFindVehicleByVIN(string $vin, string $catalog = '', string $ssd = '') : self
     {
         $this->addQuery('FindVehicleByVIN',[
             'Locale'    => $this->locale,
@@ -93,9 +100,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = VehicleListObject::class;
+
+        return $this;
     }
 
-    public function addFindVehicleByFrameNo(string $frame, string $catalog = '', string $ssd = '')
+    public function addFindVehicleByFrameNo(string $frame, string $catalog = '', string $ssd = '') : self
     {
         $this->addQuery('FindVehicleByFrameNo',[
             'Locale'    => $this->locale,
@@ -106,9 +115,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = VehicleListObject::class;
+
+        return $this;
     }
 
-    public function addListCategories(string $vehicleId, string $categoryId, string $catalog, string $ssd)
+    public function addListCategories(string $vehicleId, string $categoryId, string $catalog, string $ssd) : self
     {
         $this->addQuery('ListCategories',[
             'Locale'     => $this->locale,
@@ -119,9 +130,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = CategoryListObject::class;
+
+        return $this;
     }
 
-    public function addListUnits(string $vehicleId, string $categoryId, string $catalog, string $ssd)
+    public function addListUnits(string $vehicleId, string $categoryId, string $catalog, string $ssd) : self
     {
         $this->addQuery('ListUnits',[
             'Locale'     => $this->locale,
@@ -133,9 +146,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = UnitListObject::class;
+
+        return $this;
     }
 
-    public function addGetUnitInfo(string $unitId, string $catalog, string $ssd)
+    public function addGetUnitInfo(string $unitId, string $catalog, string $ssd) : self
     {
         $this->addQuery('GetUnitInfo',[
             'Locale'    => $this->locale,
@@ -146,9 +161,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = UnitObject::class;
+
+        return $this;
     }
 
-    public function addListImageMapByUnit(string $unitId, string $catalog, string $ssd)
+    public function addListImageMapByUnit(string $unitId, string $catalog, string $ssd) : self
     {
         $this->addQuery('ListImageMapByUnit',[
             'Catalog' => $catalog,
@@ -157,9 +174,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = ImageMapObject::class;
+
+        return $this;
     }
 
-    public function addListDetailByUnit(string $unitId, string $catalog, string $ssd)
+    public function addListDetailByUnit(string $unitId, string $catalog, string $ssd) : self
     {
         $this->addQuery('ListDetailByUnit',[
             'Locale'    => $this->locale,
@@ -170,9 +189,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = DetailListObject::class;
+
+        return $this;
     }
 
-    public function addGetFilterByUnit(string $filter, string $unitId, string $vehicleId, string $catalog, string $ssd)
+    public function addGetFilterByUnit(string $filter, string $unitId, string $vehicleId, string $catalog, string $ssd) : self
     {
         $this->addQuery('GetFilterByUnit',[
             'Locale'    => $this->locale,
@@ -184,9 +205,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = FilterObject::class;
+
+        return $this;
     }
 
-    public function addGetFilterByDetail(string $filter, string $detailId, string $unitId, string $vehicleId, string $catalog, string $ssd)
+    public function addGetFilterByDetail(string $filter, string $detailId, string $unitId, string $vehicleId, string $catalog, string $ssd) : self
     {
         $this->addQuery('GetFilterByDetail',[
             'Locale'    => $this->locale,
@@ -199,9 +222,11 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = FilterObject::class;
+
+        return $this;
     }
 
-    public function addFindApplicableVehicles(string $oem, string $catalog, string $ssd)
+    public function addFindApplicableVehicles(string $oem, string $catalog, string $ssd) : self
     {
         $this->addQuery('FindApplicableVehicles',[
             'OEM'     => $oem,
@@ -211,6 +236,8 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = VehicleListObject::class;
+
+        return $this;
     }
 
     public function execute()
