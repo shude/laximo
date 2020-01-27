@@ -1,5 +1,9 @@
 Laximo API PHP Library
 ======================
+[![Latest Stable Version](https://poser.pugx.org/shude/laximo/v/stable)](https://packagist.org/packages/shude/laximo)
+[![Total Downloads](https://poser.pugx.org/shude/laximo/downloads)](https://packagist.org/packages/shude/laximo)
+[![License](https://poser.pugx.org/shude/laximo/license)](https://packagist.org/packages/shude/laximo)
+[![Latest Unstable Version](https://poser.pugx.org/shude/laximo/v/unstable)](https://packagist.org/packages/shude/laximo)
 
  Библиотека для работы с API сервиса [LaximoOEM](https://laximo.ru/oem/)
  
