@@ -3,7 +3,7 @@ Laximo API PHP Library
 
  Библиотека для работы с API сервиса [LaximoOEM](https://laximo.ru/oem/)
  
- ##Установка
+ ## Установка
  С помощью composer:
  ```
 composer require shude/laximo
@@ -17,7 +17,7 @@ composer require shude/laximo
 }
 ```
 
-##Пример использования
+## Пример использования
 ```php
 
 $credentials = new BasicCredentials('<your_login>', '<your_password>');
