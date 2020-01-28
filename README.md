@@ -1,5 +1,6 @@
 Laximo API PHP Library
 ======================
+[![Build Status](https://travis-ci.org/shude/laximo.svg?branch=master)](https://travis-ci.org/shude/laximo) 
 [![Latest Stable Version](https://poser.pugx.org/shude/laximo/v/stable)](https://packagist.org/packages/shude/laximo)
 [![Total Downloads](https://poser.pugx.org/shude/laximo/downloads)](https://packagist.org/packages/shude/laximo)
 [![License](https://poser.pugx.org/shude/laximo/license)](https://packagist.org/packages/shude/laximo)

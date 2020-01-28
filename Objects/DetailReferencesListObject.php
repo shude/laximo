@@ -41,7 +41,7 @@ class DetailReferencesListObject extends BaseObject
                 foreach ($data->OEMPartReference as $OEMPartReferenceItem) {
                     foreach ($OEMPartReferenceItem->CatalogReferences as $catalogReference) {
                         foreach ($catalogReference->CatalogReference as $reference) {
-                            $this->addNewReference($OEMPartReferenceItem, $reference);
+                            $this->addNewReference($reference);
                         }
                     }
                 }
@@ -49,14 +49,9 @@ class DetailReferencesListObject extends BaseObject
         }
     }
 
-    private function addNewReference($OEMPartReferenceItem, $catalogReference)
+    private function addNewReference($catalogReference)
     {
-        $creationalData = [
-            'detail'  => $OEMPartReferenceItem,
-            'catalog' => $catalogReference
-        ];
-
-        $detailReference        = new DetailReferenceObject($creationalData);
+        $detailReference        = new DetailReferenceObject($catalogReference);
         $this->referencesList[] = $detailReference;
     }
 }

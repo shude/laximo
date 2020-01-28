@@ -9,6 +9,7 @@ use shude\Laximo\Objects\CatalogListObject;
 use shude\Laximo\Objects\CatalogObject;
 use shude\Laximo\Objects\CategoryListObject;
 use shude\Laximo\Objects\DetailListObject;
+use shude\Laximo\Objects\DetailReferencesListObject;
 use shude\Laximo\Objects\FilterObject;
 use shude\Laximo\Objects\ImageMapObject;
 use shude\Laximo\Objects\UnitListObject;
@@ -238,6 +239,16 @@ class Laximo
         $this->resultObjectStack[] = VehicleListObject::class;
 
         return $this;
+    }
+
+    public function addFindPartReferences(string $oem)
+    {
+        $this->addQuery('FINDPARTREFERENCES',[
+            'Locale' => $this->locale,
+            'OEM'    => $oem
+        ]);
+
+        $this->resultObjectStack[] = DetailReferencesListObject::class;
     }
 
     public function execute()

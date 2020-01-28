@@ -30,9 +30,4 @@ class DetailReferenceObject extends BaseObject
         $this->brand = (string)$data->attributes()->brand;
         $this->code  = (string)$data->attributes()->code;
     }
-
-    protected function fromJSON($data) {
-        $this->brand = (string) $data['catalog']->attributes()->brand;
-        $this->code  = (string)$data['catalog']->attributes()->code;
-    }
 }
