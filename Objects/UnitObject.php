@@ -55,6 +55,8 @@ class UnitObject extends BaseObject
 
     protected function fromXml($data)
     {
+        if(isset($data->row)) $data = $data->row;
+
         $this->code          = (string)$data['code'];
         $this->unitid        = (string)$data['unitid'];
         $this->name          = (string)$data['name'];
