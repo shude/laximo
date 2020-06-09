@@ -16,6 +16,8 @@ use shude\Laximo\Objects\UnitListObject;
 use shude\Laximo\Objects\UnitObject;
 use shude\Laximo\Objects\VehicleListObject;
 use shude\Laximo\Objects\VehicleObject;
+use shude\Laximo\Objects\WizardObject;
+use shude\Laximo\Objects\WizardStepObject;
 use shude\Laximo\Query\Query;
 use shude\Laximo\Query\QueryBuilderInterface;
 
@@ -59,6 +61,19 @@ class Laximo
         ]);
 
         $this->resultObjectStack[] = CatalogObject::class;
+
+        return $this;
+    }
+
+    public function addGetWizard2(string $catalog, string $ssd = '') : self
+    {
+        $this->addQuery('GetWizard2',[
+            'Locale' => $this->locale,
+            'Catalog' => $catalog,
+            'ssd' => $ssd
+        ]);
+
+        $this->resultObjectStack[] = WizardObject::class;
 
         return $this;
     }
