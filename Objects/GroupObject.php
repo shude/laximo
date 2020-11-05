@@ -1,4 +1,5 @@
 <?php
+
 namespace shude\Laximo\Objects;
 
 use shude\Laximo\BaseObject;
@@ -10,7 +11,7 @@ class GroupObject extends BaseObject
     /**
      * @var string
      */
-    public $contains;
+    public $link;
 
     /**
      * @var string
@@ -20,12 +21,7 @@ class GroupObject extends BaseObject
     /**
      * @var string
      */
-    public $synonyms;
-
-    /**
-     * @var string
-     */
-    public $quickgroupid;
+    public $quick_group_id;
 
     /**
      * @var GroupObject[]
@@ -37,11 +33,10 @@ class GroupObject extends BaseObject
      */
     protected function fromXml($data)
     {
-        $this->contains     = (string)$data['contains'];
-        $this->name         = (string)$data['name'];
-        $this->quickgroupid = (string)$data['quickgroupid'];
-        $this->synonyms     = (string)$data['synonyms'];
-        $children           = $data->children();
+        $this->link           = (string)$data['link'];
+        $this->name           = (string)$data['name'];
+        $this->quick_group_id = (string)$data['quickgroupid'];
+        $children             = $data->children();
 
         foreach ($children->row as $child) {
             $this->childGroups[] = new GroupObject($child);
